@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daniel Schmidt — Patentanwalt | Kanzlei für gewerblichen Rechtsschutz</title>
+  <meta name="description" content="Patentanwaltskanzlei Daniel Schmidt — Patente, Gebrauchsmuster, Marken und Designs. Schwerpunkte: Medizintechnik, Computer-implementierte Erfindungen, Maschinenbau." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0b2545;
+      --navy-deep: #061a36;
+      --navy-soft: #13315c;
+      --gold: #c9a14a;
+      --gold-light: #e4c46a;
+      --cream: #f8f5ef;
+      --paper: #ffffff;
+      --ink: #1a1a1a;
+      --ink-muted: #4a4a4a;
+      --line: rgba(11, 37, 69, 0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 300;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--navy);
+    }
+
+    a { color: var(--navy); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--gold); }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ===== Top bar ===== */
+    .topbar {
+      background: var(--navy-deep);
+      color: rgba(255,255,255,0.7);
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      padding: 0.55rem 0;
+    }
+    .topbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .topbar a { color: rgba(255,255,255,0.85); }
+    .topbar a:hover { color: var(--gold-light); }
+
+    /* ===== Header / Nav ===== */
+    header.main {
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    header.main .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1.25rem;
+      padding-bottom: 1.25rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border: 1.5px solid var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: 1.3rem;
+      color: var(--navy);
+      position: relative;
+    }
+    .brand-mark::after {
+      content: '';
+      position: absolute;
+      inset: 3px;
+      border: 1px solid var(--gold);
+      pointer-events: none;
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+    .brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .brand-sub {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-top: 2px;
+    }
+    nav ul {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+    }
+    nav a {
+      font-size: 0.88rem;
+      letter-spacing: 0.04em;
+      color: var(--navy);
+      font-weight: 400;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 1.5px;
+      background: var(--gold);
+      transition: width 0.25s;
+    }
+    nav a:hover::after { width: 100%; }
+
+    /* ===== Hero ===== */
+    .hero {
+      background:
+        linear-gradient(135deg, rgba(6,26,54,0.92) 0%, rgba(11,37,69,0.88) 100%),
+        radial-gradient(circle at 80% 20%, rgba(201,161,74,0.15), transparent 50%),
+        var(--navy-deep);
+      color: var(--paper);
+      padding: 7rem 0 8rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      border: 1px solid rgba(201,161,74,0.2);
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -60px;
+      width: 380px;
+      height: 380px;
+      border: 1px solid rgba(201,161,74,0.12);
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+    .hero .container { position: relative; z-index: 1; }
+    .hero-kicker {
+      font-size: 0.78rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 1.4rem;
+      font-weight: 400;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.9rem);
+      line-height: 1.08;
+      color: var(--paper);
+      max-width: 780px;
+      margin-bottom: 1.6rem;
+      font-weight: 500;
+    }
+    .hero h1 em {
+      color: var(--gold-light);
+      font-style: italic;
+      font-weight: 400;
+    }
+    .hero p.lead {
+      font-size: 1.1rem;
+      max-width: 620px;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 2.4rem;
+      font-weight: 300;
+    }
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2rem;
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+      border: 1px solid var(--gold);
+      color: var(--navy);
+      background: var(--gold);
+      transition: all 0.25s;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: var(--gold-light);
+      border-color: var(--gold-light);
+      color: var(--navy-deep);
+    }
+    .btn.ghost {
+      background: transparent;
+      color: var(--paper);
+      border-color: rgba(255,255,255,0.4);
+    }
+    .btn.ghost:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: var(--paper);
+      color: var(--paper);
+    }
+
+    /* ===== Section shared ===== */
+    section {
+      padding: 6rem 0;
+    }
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+    .section-title {
+      font-size: clamp(2rem, 3.5vw, 2.7rem);
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+      max-width: 720px;
+    }
+    .section-intro {
+      max-width: 640px;
+      color: var(--ink-muted);
+      font-size: 1.02rem;
+      margin-bottom: 3.5rem;
+    }
+    .divider-gold {
+      width: 48px;
+      height: 2px;
+      background: var(--gold);
+      margin-bottom: 2rem;
+    }
+
+    /* ===== Leistungen ===== */
+    .services {
+      background: var(--cream);
+    }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .service-card {
+      background: var(--paper);
+      padding: 2.2rem 2rem;
+      border: 1px solid var(--line);
+      transition: all 0.3s;
+      position: relative;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(11,37,69,0.08);
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.9rem;
+    }
+    .service-card p {
+      color: var(--ink-muted);
+      font-size: 0.95rem;
+    }
+
+    /* ===== Über / Team ===== */
+    .about {
+      background: var(--paper);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .about-portrait {
+      aspect-ratio: 3/4;
+      background:
+        linear-gradient(135deg, rgba(11,37,69,0.85), rgba(11,37,69,0.6)),
+        linear-gradient(45deg, var(--navy) 25%, transparent 25%, transparent 75%, var(--navy) 75%) 0 0 / 40px 40px,
+        var(--navy-soft);
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 2rem;
+      overflow: hidden;
+    }
+    .about-portrait::before {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(201,161,74,0.5);
+      pointer-events: none;
+    }
+    .portrait-initials {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 6rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.15);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      letter-spacing: 0.05em;
+    }
+    .portrait-caption {
+      color: var(--paper);
+      position: relative;
+      z-index: 1;
+    }
+    .portrait-caption .name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      font-weight: 500;
+    }
+    .portrait-caption .role {
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-top: 4px;
+    }
+    .about-content h2 {
+      margin-bottom: 1.5rem;
+    }
+    .about-content p {
+      color: var(--ink-muted);
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+    }
+    .credentials {
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--line);
+    }
+    .credentials h4 {
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+    }
+    .cred-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem 2rem;
+    }
+    .cred-list li {
+      font-size: 0.92rem;
+      color: var(--ink);
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .cred-list li::before {
+      content: '§';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+    }
+
+    /* ===== Kontakt ===== */
+    .contact {
+      background: var(--navy-deep);
+      color: var(--paper);
+      position: relative;
+      overflow: hidden;
+    }
+    .contact::before {
+      content: '';
+      position: absolute;
+      bottom: -200px;
+      left: -100px;
+      width: 400px;
+      height: 400px;
+      border: 1px solid rgba(201,161,74,0.15);
+      border-radius: 50%;
+    }
+    .contact .section-title,
+    .contact h3 {
+      color: var(--paper);
+    }
+    .contact .section-intro {
+      color: rgba(255,255,255,0.72);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      position: relative;
+      z-index: 1;
+    }
+    .contact-block h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1.2rem;
+    }
+    .contact-item {
+      margin-bottom: 1.4rem;
+    }
+    .contact-item .label {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 0.4rem;
+    }
+    .contact-item .value {
+      font-size: 1rem;
+      color: var(--paper);
+    }
+    .contact-item .value a { color: var(--paper); }
+    .contact-item .value a:hover { color: var(--gold-light); }
+
+    .hours-list {
+      list-style: none;
+    }
+    .hours-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.95rem;
+    }
+    .hours-list li span:first-child { color: rgba(255,255,255,0.75); }
+
+    /* ===== Footer ===== */
+    footer {
+      background: #04122a;
+      color: rgba(255,255,255,0.55);
+      padding: 2.2rem 0;
+      font-size: 0.82rem;
+    }
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    footer a { color: rgba(255,255,255,0.75); }
+    footer a:hover { color: var(--gold-light); }
+    .footer-links { display: flex; gap: 1.5rem; }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 820px) {
+      nav ul { display: none; }
+      .hero { padding: 5rem 0 5.5rem; }
+      section { padding: 4.5rem 0; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-portrait { max-width: 360px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .cred-list { grid-template-columns: 1fr; }
+      .topbar .container { font-size: 0.72rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="container">
+      <span>Kanzlei für gewerblichen Rechtsschutz · München</span>
+      <span><a href="mailto:kanzlei@schmidt-ip.de">kanzlei@schmidt-ip.de</a> &nbsp;·&nbsp; +49 89 000 000 00</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="main">
+    <div class="container">
+      <a href="#top" class="brand">
+        <div class="brand-mark">DS</div>
+        <div class="brand-text">
+          <span class="brand-name">Daniel Schmidt</span>
+          <span class="brand-sub">Patentanwalt</span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#ueber">Über uns</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="container">
+      <div class="hero-kicker">— Gewerblicher Rechtsschutz seit 2012</div>
+      <h1>Schutz für <em>Erfindungen</em>,<br/>die die Welt bewegen.</h1>
+      <p class="lead">Persönliche Beratung auf höchstem fachlichen Niveau. Wir vertreten Erfinder, Start-ups und mittelständische Unternehmen in allen Fragen des Patent-, Gebrauchsmuster-, Marken- und Designrechts — von der ersten Recherche bis zur erfolgreichen Erteilung.</p>
+      <div class="hero-cta">
+        <a href="#kontakt" class="btn">Termin vereinbaren</a>
+        <a href="#leistungen" class="btn ghost">Leistungsspektrum</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leistungen -->
+  <section class="services" id="leistungen">
+    <div class="container">
+      <div class="section-label">Leistungsspektrum</div>
+      <h2 class="section-title">Umfassende Beratung im gewerblichen Rechtsschutz.</h2>
+      <div class="divider-gold"></div>
+      <p class="section-intro">Wir begleiten Sie durch den gesamten Lebenszyklus Ihres geistigen Eigentums — strategisch, präzise und mit dem Blick für das Wesentliche.</p>
+
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-num">I.</div>
+          <h3>Patente &amp; Gebrauchsmuster</h3>
+          <p>Anmeldung und Verteidigung nationaler, europäischer und internationaler Schutzrechte. Erstellung belastbarer Ansprüche, Stellungnahmen zu Prüfungsbescheiden, Einspruchs- und Nichtigkeitsverfahren.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-num">II.</div>
+          <h3>Marken &amp; Designs</h3>
+          <p>Strategischer Aufbau und Verteidigung Ihres Markenportfolios bei DPMA, EUIPO und WIPO. Recherchen, Widerspruchsverfahren sowie Gestaltungsmuster- und Designschutz.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-num">III.</div>
+          <h3>Stand-der-Technik-Recherche</h3>
+          <p>Fundierte Patent- und FTO-Recherchen als Grundlage für Anmelde-, Produkt- und Investitionsentscheidungen. Neuheitsbewertung nach § 3 PatG bzw. Art. 54 EPÜ.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-num">IV.</div>
+          <h3>Verletzungs­verfahren</h3>
+          <p>Durchsetzung und Verteidigung bei Patent- und Markenverletzungen. Abmahnungen, einstweilige Verfügungen und gerichtliche Vertretung in Zusammenarbeit mit spezialisierten Rechtsanwälten.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-num">V.</div>
+          <h3>Lizenz &amp; IP-Strategie</h3>
+          <p>Erarbeitung von Lizenz- und Technologietransfer­verträgen, Due-Diligence-Prüfungen bei M&amp;A sowie Entwicklung unternehmens­weiter Schutzrechts­strategien.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-num">VI.</div>
+          <h3>Technologiefelder</h3>
+          <p>Besondere Expertise in Medizintechnik, computer-implementierten Erfindungen (KI/Software), Maschinenbau sowie mechatronischen Systemen — von der Idee bis zur Serie.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Über -->
+  <section class="about" id="ueber">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-portrait">
+          <span class="portrait-initials">DS</span>
+          <div class="portrait-caption">
+            <div class="name">Daniel Schmidt</div>
+            <div class="role">Patentanwalt · Dipl.-Ing.</div>
+          </div>
+        </div>
+        <div class="about-content">
+          <div class="section-label">Die Kanzlei</div>
+          <h2 class="section-title">Ingenieursdenken. Juristische Präzision.</h2>
+          <div class="divider-gold"></div>
+          <p>Als Patentanwalt mit technischer und juristischer Ausbildung verbinde ich ingenieur­mäßige Analyse mit der formalen Strenge des Patentrechts. Jedes Mandat ist für mich eine Übersetzungsaufgabe: die Erfindung verstehen, das Wesentliche identifizieren und in einem Schutzumfang abbilden, der belastbar und zugleich strategisch tragfähig ist.</p>
+          <p>Die Kanzlei arbeitet bewusst persönlich. Sie erhalten keinen anonymen Prozess, sondern einen durchgängigen Ansprechpartner — von der ersten Idee bis zur Erteilung und darüber hinaus.</p>
+
+          <div class="credentials">
+            <h4>Qualifikationen &amp; Zulassungen</h4>
+            <ul class="cred-list">
+              <li>Zugelassener Patentanwalt (DPMA)</li>
+              <li>European Patent Attorney (EPA)</li>
+              <li>Vertreter vor dem EUIPO</li>
+              <li>Dipl.-Ing. Maschinenbau</li>
+              <li>Mitglied der Patentanwalts­kammer</li>
+              <li>epi – Institute of Professional Representatives</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section class="contact" id="kontakt">
+    <div class="container">
+      <div class="section-label">Kontakt</div>
+      <h2 class="section-title">Sprechen wir über Ihr Schutzrecht.</h2>
+      <div class="divider-gold"></div>
+      <p class="section-intro">Ein erstes Orientierungs­gespräch ist unverbindlich. Schildern Sie uns Ihr Anliegen — wir melden uns innerhalb eines Werktags zurück.</p>
+
+      <div class="contact-grid">
+        <div class="contact-block">
+          <h3>Kanzlei</h3>
+          <div class="contact-item">
+            <div class="label">Anschrift</div>
+            <div class="value">Musterstraße 12<br/>80331 München</div>
+          </div>
+          <div class="contact-item">
+            <div class="label">Telefon</div>
+            <div class="value"><a href="tel:+49890000000">+49 89 000 000 00</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="label">E-Mail</div>
+            <div class="value"><a href="mailto:kanzlei@schmidt-ip.de">kanzlei@schmidt-ip.de</a></div>
+          </div>
+        </div>
+        <div class="contact-block">
+          <h3>Sprechzeiten</h3>
+          <ul class="hours-list">
+            <li><span>Montag – Donnerstag</span><span>09:00 – 18:00</span></li>
+            <li><span>Freitag</span><span>09:00 – 16:00</span></li>
+            <li><span>Samstag &amp; Sonntag</span><span>nach Vereinbarung</span></li>
+          </ul>
+          <div class="contact-item" style="margin-top:1.8rem">
+            <div class="label">Termine außerhalb der Sprechzeiten</div>
+            <div class="value">Gerne nach individueller Vereinbarung.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div>© 2026 Kanzlei Daniel Schmidt · Alle Rechte vorbehalten.</div>
+      <div class="footer-links">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">Berufsrechtliche Angaben</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
