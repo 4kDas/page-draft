@@ -449,10 +449,9 @@
       display: grid;
       grid-template-columns: 1fr 1.3fr;
       gap: 4rem;
-      align-items: start;
+      align-items: stretch;
     }
     .about-portrait {
-      aspect-ratio: 3/4;
       background:
         linear-gradient(135deg, rgba(11,37,69,0.85), rgba(11,37,69,0.6)),
         linear-gradient(45deg, var(--navy) 25%, transparent 25%, transparent 75%, var(--navy) 75%) 0 0 / 40px 40px,
@@ -631,7 +630,7 @@
       .hero { padding: 5rem 0 5.5rem; }
       section { padding: 4.5rem 0; }
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .about-portrait { max-width: 360px; }
+      .about-portrait { max-width: 360px; aspect-ratio: 3/4; }
       .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .cred-list { grid-template-columns: 1fr; }
       .topbar .container { font-size: 0.72rem; }
