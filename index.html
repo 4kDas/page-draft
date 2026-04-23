@@ -116,10 +116,6 @@
   </script>
 
   <style>
-    @font-face { font-family: 'Cormorant Garamond'; font-weight: 400; src: url('fonts/cormorant-400.ttf') format('truetype'); font-display: swap; }
-    @font-face { font-family: 'Cormorant Garamond'; font-weight: 500; src: url('fonts/cormorant-500.ttf') format('truetype'); font-display: swap; }
-    @font-face { font-family: 'Cormorant Garamond'; font-weight: 600; src: url('fonts/cormorant-600.ttf') format('truetype'); font-display: swap; }
-    @font-face { font-family: 'Cormorant Garamond'; font-weight: 700; src: url('fonts/cormorant-700.ttf') format('truetype'); font-display: swap; }
     @font-face { font-family: 'Inter'; font-weight: 300; src: url('fonts/inter-300.ttf') format('truetype'); font-display: swap; }
     @font-face { font-family: 'Inter'; font-weight: 400; src: url('fonts/inter-400.ttf') format('truetype'); font-display: swap; }
     @font-face { font-family: 'Inter'; font-weight: 500; src: url('fonts/inter-500.ttf') format('truetype'); font-display: swap; }
@@ -127,480 +123,301 @@
 
     :root {
       --navy: #0b2545;
-      --navy-deep: #061a36;
-      --navy-soft: #13315c;
       --gold: #c9a14a;
-      --gold-light: #e4c46a;
-      --cream: #f8f5ef;
       --paper: #ffffff;
       --ink: #1a1a1a;
-      --ink-muted: #4a4a4a;
-      --line: rgba(11, 37, 69, 0.12);
+      --muted: #555555;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Inter', -apple-system, system-ui, sans-serif;
       font-weight: 300;
       color: var(--ink);
       background: var(--paper);
-      line-height: 1.65;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-
-    h1, h2, h3, h4 {
-      font-family: 'Cormorant Garamond', 'Times New Roman', serif;
-      font-weight: 500;
-      letter-spacing: -0.01em;
+    h1, h2, h3 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
       color: var(--navy);
+      letter-spacing: -0.02em;
     }
-
-    a { color: var(--navy); text-decoration: none; transition: color 0.2s; }
+    a { color: var(--ink); text-decoration: none; transition: color 0.2s; }
     a:hover { color: var(--gold); }
-
-    .container {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 2rem; }
 
     /* ===== Top bar ===== */
     .topbar {
-      background: var(--navy-deep);
-      color: rgba(255,255,255,0.7);
+      background: var(--navy);
+      color: rgba(255,255,255,0.75);
       font-size: 0.78rem;
       letter-spacing: 0.05em;
       padding: 0.55rem 0;
     }
-    .topbar .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .topbar a { color: rgba(255,255,255,0.85); }
-    .topbar a:hover { color: var(--gold-light); }
+    .topbar .container { display: flex; justify-content: space-between; align-items: center; }
+    .topbar a { color: rgba(255,255,255,0.9); }
+    .topbar a:hover { color: var(--gold); }
 
-    /* ===== Header / Nav ===== */
+    /* ===== Header ===== */
     header.main {
-      background: var(--paper);
-      border-bottom: 1px solid var(--line);
-      position: sticky;
-      top: 0;
-      z-index: 50;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(12px);
+      position: sticky; top: 0; z-index: 50;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
     }
     header.main .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 1.25rem;
-      padding-bottom: 1.25rem;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.25rem 2rem;
     }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.9rem;
-    }
-    .brand-mark {
-      width: 44px;
-      height: 44px;
-      border: 1.5px solid var(--navy);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 600;
-      font-size: 1.3rem;
-      color: var(--navy);
-      position: relative;
-    }
-    .brand-mark::after {
-      content: '';
-      position: absolute;
-      inset: 3px;
-      border: 1px solid var(--gold);
-      pointer-events: none;
-    }
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-    }
+    .brand { color: var(--navy); }
     .brand-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem;
+      font-size: 1.15rem;
       font-weight: 600;
-      color: var(--navy);
-      letter-spacing: 0.18em;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
+      color: var(--navy);
     }
     .brand-sub {
-      font-size: 0.7rem;
-      letter-spacing: 0.14em;
+      display: block;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--ink-muted);
+      color: var(--muted);
       margin-top: 3px;
-    }
-    nav ul {
-      display: flex;
-      gap: 2.2rem;
-      list-style: none;
-    }
-    nav a {
-      font-size: 0.88rem;
-      letter-spacing: 0.04em;
-      color: var(--navy);
       font-weight: 400;
-      position: relative;
     }
-    nav a::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -6px;
-      width: 0;
-      height: 1.5px;
-      background: var(--gold);
-      transition: width 0.25s;
-    }
-    nav a:hover::after { width: 100%; }
+    nav ul { display: flex; gap: 2.5rem; list-style: none; }
+    nav a { font-size: 0.9rem; font-weight: 400; color: var(--navy); }
+    nav a:hover { color: var(--gold); }
 
     /* ===== Hero ===== */
     .hero {
-      background:
-        linear-gradient(135deg, rgba(6,26,54,0.92) 0%, rgba(11,37,69,0.88) 100%),
-        radial-gradient(circle at 80% 20%, rgba(201,161,74,0.15), transparent 50%),
-        var(--navy-deep);
+      background: var(--navy);
       color: var(--paper);
-      padding: 7rem 0 8rem;
-      position: relative;
-      overflow: hidden;
+      padding: 10rem 0 10rem;
+      text-align: center;
     }
-    .hero .container { position: relative; z-index: 1; }
     .hero-kicker {
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 2rem;
+    }
+    .hero h1 {
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 600;
+      line-height: 1.05;
+      color: var(--paper);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.03em;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+    .hero p {
+      font-size: 1.25rem;
+      font-weight: 300;
+      max-width: 720px;
+      margin: 0 auto;
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* ===== Sections ===== */
+    section { padding: 7rem 0; }
+    .section-header { text-align: center; margin-bottom: 4rem; }
+    .section-kicker {
       font-size: 0.78rem;
       letter-spacing: 0.25em;
       text-transform: uppercase;
-      color: var(--gold-light);
-      margin-bottom: 1.4rem;
-      font-weight: 400;
-    }
-    .hero h1 {
-      font-size: clamp(2.4rem, 5vw, 3.9rem);
-      line-height: 1.08;
-      color: var(--paper);
-      max-width: 780px;
-      margin-bottom: 1.6rem;
-      font-weight: 500;
-    }
-    .hero h1 em {
-      color: var(--gold-light);
-      font-style: italic;
-      font-weight: 400;
-    }
-    .hero p.lead {
-      font-size: 1.1rem;
-      max-width: 620px;
-      color: rgba(255,255,255,0.82);
-      margin-bottom: 2.4rem;
-      font-weight: 300;
-    }
-    .hero-cta {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .btn {
-      display: inline-block;
-      padding: 0.9rem 2rem;
-      font-size: 0.88rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-weight: 500;
-      border: 1px solid var(--gold);
-      color: var(--navy);
-      background: var(--gold);
-      transition: all 0.25s;
-      cursor: pointer;
-    }
-    .btn:hover {
-      background: var(--gold-light);
-      border-color: var(--gold-light);
-      color: var(--navy-deep);
-    }
-    .btn.ghost {
-      background: transparent;
-      color: var(--paper);
-      border-color: rgba(255,255,255,0.4);
-    }
-    .btn.ghost:hover {
-      background: rgba(255,255,255,0.08);
-      border-color: var(--paper);
-      color: var(--paper);
-    }
-
-    /* ===== Section shared ===== */
-    section {
-      padding: 6rem 0;
-    }
-    .section-label {
-      font-size: 0.75rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 1rem;
       font-weight: 500;
+      margin-bottom: 1rem;
     }
     .section-title {
-      font-size: clamp(2rem, 3.5vw, 2.7rem);
-      line-height: 1.15;
-      margin-bottom: 1.2rem;
-      max-width: 720px;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 600;
     }
     .section-intro {
       max-width: 640px;
-      color: var(--ink-muted);
-      font-size: 1.02rem;
-      margin-bottom: 3.5rem;
-    }
-    .divider-gold {
-      width: 48px;
-      height: 2px;
-      background: var(--gold);
-      margin-bottom: 2rem;
+      margin: 1.2rem auto 0;
+      color: var(--muted);
+      font-size: 1.05rem;
     }
 
-    /* ===== Leistungen ===== */
-    .services {
-      background: var(--cream);
-    }
+    /* ===== Services ===== */
+    .services { background: var(--paper); }
     .service-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      gap: 4rem 3rem;
     }
-    .service-card {
-      background: var(--paper);
-      padding: 2.2rem 2rem;
-      border: 1px solid var(--line);
-      transition: all 0.3s;
-      position: relative;
-    }
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: var(--gold);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s;
-    }
-    .service-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px rgba(11,37,69,0.08);
-    }
-    .service-card:hover::before { transform: scaleX(1); }
+    .service-card h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 0.8rem; }
+    .service-card p { color: var(--muted); font-size: 0.97rem; }
     .service-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
+      display: inline-block;
+      font-size: 0.8rem; font-weight: 500;
       color: var(--gold);
-      letter-spacing: 0.1em;
+      letter-spacing: 0.15em;
       margin-bottom: 1rem;
     }
-    .service-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.9rem;
-    }
-    .service-card p {
-      color: var(--ink-muted);
-      font-size: 0.95rem;
-    }
 
-    /* ===== Über / Team ===== */
-    .about {
-      background: var(--paper);
-    }
+    /* ===== About ===== */
+    .about { background: var(--paper); }
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1.3fr;
-      gap: 4rem;
+      gap: 5rem;
       align-items: stretch;
     }
     .about-portrait {
-      background:
-        linear-gradient(135deg, rgba(11,37,69,0.85), rgba(11,37,69,0.6)),
-        linear-gradient(45deg, var(--navy) 25%, transparent 25%, transparent 75%, var(--navy) 75%) 0 0 / 40px 40px,
-        var(--navy-soft);
+      background: var(--navy);
+      padding: 3rem 2rem;
       position: relative;
       display: flex;
-      align-items: flex-end;
-      padding: 2rem;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 520px;
       overflow: hidden;
     }
     .about-portrait::before {
       content: '';
       position: absolute;
       inset: 12px;
-      border: 1px solid rgba(201,161,74,0.5);
+      border: 1px solid var(--gold);
       pointer-events: none;
     }
     .portrait-initials {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.3rem;
-      font-weight: 500;
-      color: rgba(255,255,255,0.22);
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: 0.4em;
+      color: rgba(255,255,255,0.25);
       position: absolute;
-      top: 50%;
-      left: 50%;
+      top: 50%; left: 50%;
       transform: translate(-50%, -50%);
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
       white-space: nowrap;
     }
-    .portrait-caption {
-      color: var(--paper);
-      position: relative;
-      z-index: 1;
-    }
+    .portrait-caption { position: relative; z-index: 1; }
     .portrait-caption .name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.7rem;
-      font-weight: 500;
+      font-size: 1.3rem; font-weight: 600;
+      color: var(--paper);
     }
     .portrait-caption .role {
-      font-size: 0.78rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      margin-top: 4px;
+      font-size: 0.72rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold);
+      margin-top: 0.5rem;
     }
-    .about-content h2 {
-      margin-bottom: 1.5rem;
-    }
-    .about-content p {
-      color: var(--ink-muted);
-      margin-bottom: 1.2rem;
-      font-size: 1rem;
-    }
+    .about-content h2 { margin-bottom: 1.5rem; font-size: clamp(1.8rem, 3vw, 2.4rem); }
+    .about-content p { color: var(--muted); margin-bottom: 1rem; font-size: 1rem; }
     .credentials {
       margin-top: 2.5rem;
       padding-top: 2rem;
-      border-top: 1px solid var(--line);
+      border-top: 1px solid rgba(0,0,0,0.08);
     }
     .credentials h4 {
-      font-size: 0.8rem;
-      letter-spacing: 0.2em;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--gold);
       margin-bottom: 1.2rem;
-      font-family: 'Inter', sans-serif;
       font-weight: 500;
     }
     .cred-list {
       list-style: none;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0.9rem 2rem;
+      gap: 0.8rem 2rem;
     }
     .cred-list li {
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       color: var(--ink);
-      padding-left: 1.2rem;
+      padding-left: 1rem;
       position: relative;
     }
     .cred-list li::before {
       content: '§';
-      position: absolute;
-      left: 0;
+      position: absolute; left: 0;
       color: var(--gold);
-      font-family: 'Cormorant Garamond', serif;
       font-weight: 600;
     }
 
-    /* ===== Kontakt ===== */
+    /* ===== Contact ===== */
     .contact {
-      background: var(--navy-deep);
-      color: var(--paper);
-      position: relative;
-      overflow: hidden;
-    }
-    .contact .section-title,
-    .contact h3 {
+      background: var(--navy);
       color: var(--paper);
     }
-    .contact .section-intro {
-      color: rgba(255,255,255,0.72);
+    .contact .section-header { text-align: center; }
+    .contact h2, .contact .section-title {
+      color: var(--paper);
     }
+    .contact .section-intro { color: rgba(255,255,255,0.75); }
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
-      position: relative;
-      z-index: 1;
+      max-width: 860px;
+      margin: 0 auto;
     }
     .contact-block h3 {
-      font-size: 1.4rem;
-      margin-bottom: 1.2rem;
+      font-size: 1.2rem;
+      color: var(--paper);
+      margin-bottom: 1.5rem;
     }
-    .contact-item {
-      margin-bottom: 1.4rem;
-    }
+    .contact-item { margin-bottom: 1.4rem; }
     .contact-item .label {
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--gold-light);
+      color: var(--gold);
       margin-bottom: 0.4rem;
+      font-weight: 500;
     }
-    .contact-item .value {
-      font-size: 1rem;
-      color: var(--paper);
-    }
-    .contact-item .value a { color: var(--paper); }
-    .contact-item .value a:hover { color: var(--gold-light); }
-
-    .hours-list {
-      list-style: none;
-    }
+    .contact-item .value { font-size: 1rem; color: var(--paper); }
+    .contact-item .value a { color: var(--paper); border-bottom: 1px solid rgba(201,161,74,0.5); }
+    .contact-item .value a:hover { color: var(--gold); border-color: var(--gold); }
+    .hours-list { list-style: none; }
     .hours-list li {
       display: flex;
       justify-content: space-between;
-      padding: 0.7rem 0;
+      padding: 0.6rem 0;
       border-bottom: 1px solid rgba(255,255,255,0.1);
       font-size: 0.95rem;
     }
-    .hours-list li span:first-child { color: rgba(255,255,255,0.75); }
+    .hours-list li span:first-child { color: rgba(255,255,255,0.7); }
+    .eilige-hinweis {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 0.6rem;
+      line-height: 1.5;
+    }
 
     /* ===== Footer ===== */
     footer {
-      background: #04122a;
-      color: rgba(255,255,255,0.55);
+      background: var(--navy);
+      color: rgba(255,255,255,0.6);
       padding: 2.2rem 0;
       font-size: 0.82rem;
+      border-top: 1px solid rgba(201,161,74,0.25);
     }
     footer .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
+      display: flex; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
     }
-    footer a { color: rgba(255,255,255,0.75); }
-    footer a:hover { color: var(--gold-light); }
+    footer a { color: rgba(255,255,255,0.85); }
+    footer a:hover { color: var(--gold); }
     .footer-links { display: flex; gap: 1.5rem; }
 
     /* ===== Responsive ===== */
     @media (max-width: 820px) {
       nav ul { display: none; }
-      .hero { padding: 5rem 0 5.5rem; }
+      .hero { padding: 6rem 0; }
       section { padding: 4.5rem 0; }
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .about-portrait { max-width: 360px; aspect-ratio: 3/4; }
+      .about-portrait { min-height: 0; aspect-ratio: 3/4; max-width: 360px; }
       .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .cred-list { grid-template-columns: 1fr; }
       .topbar .container { font-size: 0.72rem; }
@@ -621,15 +438,13 @@
   <header class="main">
     <div class="container">
       <a href="#top" class="brand">
-        <div class="brand-text">
-          <span class="brand-name">ipwakaru</span>
-          <span class="brand-sub">Dr. Daniel Schmidt · Friedrichshafen</span>
-        </div>
+        <span class="brand-name">ipwakaru</span>
+        <span class="brand-sub">Dr. Daniel Schmidt · Friedrichshafen</span>
       </a>
       <nav>
         <ul>
           <li><a href="#leistungen">Leistungen</a></li>
-          <li><a href="#ueber">Über uns</a></li>
+          <li><a href="#ueber">Über</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
         </ul>
       </nav>
@@ -641,50 +456,47 @@
     <div class="container">
       <div class="hero-kicker">— Patentanwalt am Bodensee</div>
       <h1>Erfindungen <em>analysieren</em>.</h1>
-      <p class="lead">Patentanmeldungen mit naturwissenschaftlichem Tiefgang — <span style="white-space: nowrap;">persönlich, durchgängig, präzise.</span></p>
-      <div class="hero-cta">
-        <a href="#kontakt" class="btn">Termin vereinbaren</a>
-        <a href="#leistungen" class="btn ghost">Leistungsspektrum</a>
-      </div>
+      <p>Patentanmeldungen mit naturwissenschaftlichem Tiefgang — <span style="white-space: nowrap;">persönlich, durchgängig, präzise.</span></p>
     </div>
   </section>
 
   <!-- Leistungen -->
   <section class="services" id="leistungen">
     <div class="container">
-      <div class="section-label">Leistungsspektrum</div>
-      <h2 class="section-title">Umfassende Beratung im gewerblichen Rechtsschutz.</h2>
-      <div class="divider-gold"></div>
-      <p class="section-intro">Wir begleiten Sie durch den gesamten Lebenszyklus Ihres geistigen Eigentums — strategisch, präzise und mit dem Blick für das Wesentliche.</p>
+      <div class="section-header">
+        <div class="section-kicker">Leistungsspektrum</div>
+        <h2 class="section-title">Gewerblicher Rechtsschutz, fokussiert.</h2>
+        <p class="section-intro">Begleitung durch den gesamten Lebenszyklus Ihres geistigen Eigentums — strategisch, präzise und mit dem Blick für das Wesentliche.</p>
+      </div>
 
       <div class="service-grid">
         <div class="service-card">
-          <div class="service-num">I.</div>
+          <div class="service-num">01</div>
           <h3>Patente &amp; Gebrauchsmuster</h3>
           <p>Anmeldung und Verteidigung nationaler, europäischer und internationaler Schutzrechte. Erstellung belastbarer Ansprüche, Stellungnahmen zu Prüfungsbescheiden, Einspruchs- und Nichtigkeitsverfahren.</p>
         </div>
         <div class="service-card">
-          <div class="service-num">II.</div>
+          <div class="service-num">02</div>
           <h3>Marken &amp; Designs</h3>
           <p>Als Patentanwalt begleite ich auf Wunsch auch Marken- und Designanmeldungen bei DPMA, EUIPO und WIPO. Der Schwerpunkt meiner Tätigkeit liegt auf technischen Schutzrechten; für komplexe markenrechtliche Fragestellungen arbeite ich mit spezialisierten Kollegen zusammen.</p>
         </div>
         <div class="service-card">
-          <div class="service-num">III.</div>
+          <div class="service-num">03</div>
           <h3>Stand-der-Technik-Recherche</h3>
           <p>Fundierte Patent- und FTO-Recherchen als Grundlage für Anmelde-, Produkt- und Investitionsentscheidungen. Neuheitsbewertung nach § 3 PatG bzw. Art. 54 EPÜ.</p>
         </div>
         <div class="service-card">
-          <div class="service-num">IV.</div>
+          <div class="service-num">04</div>
           <h3>Verletzungs­verfahren</h3>
           <p>Die gerichtliche Durchsetzung und Verteidigung von Patent- und Markenverletzungen vor den ordentlichen Gerichten obliegt dem Rechtsanwalt. Gern wirke ich in solchen Verfahren unterstützend mit — etwa bei der technischen Bewertung, der Vorbereitung von Abmahnungen oder in parallel geführten Nichtigkeits- und Löschungsverfahren — in Abstimmung mit einem spezialisierten Rechtsanwalt Ihres Vertrauens oder aus meinem Netzwerk.</p>
         </div>
         <div class="service-card">
-          <div class="service-num">V.</div>
+          <div class="service-num">05</div>
           <h3>Lizenz &amp; IP-Strategie</h3>
           <p>Erarbeitung von Lizenz- und Technologietransfer­verträgen, Due-Diligence-Prüfungen bei M&amp;A sowie Entwicklung unternehmens­weiter Schutzrechts­strategien.</p>
         </div>
         <div class="service-card">
-          <div class="service-num">VI.</div>
+          <div class="service-num">06</div>
           <h3>Technologiefelder</h3>
           <p>Besondere Expertise in digitalen Schlüsseltechnologien, computerimplementierten Erfindungen, künstlicher Intelligenz, Software, Medizintechnik sowie mechatronischen Systemen — von der Idee bis zur Serie.</p>
         </div>
@@ -700,13 +512,12 @@
           <span class="portrait-initials">IPWAKARU</span>
           <div class="portrait-caption">
             <div class="name">Daniel Schmidt</div>
-            <div class="role">Patentanwalt · Dr. rer. nat. · Dipl.-Phys.</div>
+            <div class="role">Dr. rer. nat. · Dipl.-Phys.</div>
           </div>
         </div>
         <div class="about-content">
-          <div class="section-label">Die Kanzlei</div>
-          <h2 class="section-title">Physikerdenken. Juristische Präzision.</h2>
-          <div class="divider-gold"></div>
+          <div class="section-kicker">Die Kanzlei</div>
+          <h2>Physikerdenken. Juristische Präzision.</h2>
           <p>Als Patentanwalt mit technischer und juristischer Ausbildung verbinde ich naturwissenschaftliche Analyse mit der formalen Strenge des Patentrechts. Jedes Mandat ist für mich eine Übersetzungsaufgabe: die Erfindung verstehen, das Wesentliche identifizieren und in einem Schutzumfang abbilden, der belastbar und zugleich strategisch tragfähig ist.</p>
           <p>Die Kanzlei arbeitet bewusst persönlich. Sie erhalten keinen anonymen Prozess, sondern einen durchgängigen Ansprechpartner — von der ersten Idee bis zur Erteilung und darüber hinaus.</p>
 
@@ -730,10 +541,11 @@
   <!-- Kontakt -->
   <section class="contact" id="kontakt">
     <div class="container">
-      <div class="section-label">Kontakt</div>
-      <h2 class="section-title">Sprechen wir über Ihr Schutzrecht.</h2>
-      <div class="divider-gold"></div>
-      <p class="section-intro">Ein erstes Orientierungs­gespräch ist unverbindlich. Schildern Sie uns Ihr Anliegen — wir melden uns innerhalb eines Werktags zurück.</p>
+      <div class="section-header">
+        <div class="section-kicker">Kontakt</div>
+        <h2 class="section-title">Sprechen wir über Ihr Schutzrecht.</h2>
+        <p class="section-intro">Ein erstes Orientierungs­gespräch ist unverbindlich. Schildern Sie uns Ihr Anliegen — wir melden uns innerhalb eines Werktags zurück.</p>
+      </div>
 
       <div class="contact-grid">
         <div class="contact-block">
@@ -749,7 +561,7 @@
           <div class="contact-item">
             <div class="label">E-Mail</div>
             <div class="value"><a href="mailto:danielschmidtip@t-online.de">danielschmidtip@t-online.de</a></div>
-            <div class="value" style="font-size:0.82rem; color:rgba(255,255,255,0.6); margin-top:0.5rem;">Falls Sie uns eine eilige Nachricht senden wollen oder eine Frist zu wahren ist, vergewissern Sie sich bitte, dass wir Ihre E-Mail auch wirklich erhalten haben.</div>
+            <div class="eilige-hinweis">Falls Sie uns eine eilige Nachricht senden wollen oder eine Frist zu wahren ist, vergewissern Sie sich bitte, dass wir Ihre E-Mail auch wirklich erhalten haben.</div>
           </div>
         </div>
         <div class="contact-block">
@@ -759,9 +571,9 @@
             <li><span>Freitag</span><span>09:00 – 16:00</span></li>
             <li><span>Samstag &amp; Sonntag</span><span>nach Vereinbarung</span></li>
           </ul>
-          <div class="contact-item" style="margin-top:1.8rem">
+          <div class="contact-item" style="margin-top:1.6rem">
             <div class="label">Termine außerhalb der Sprechzeiten</div>
-            <div class="value">Gerne nach individueller Vereinbarung.</div>
+            <div class="value" style="font-size:0.9rem;">Gerne nach individueller Vereinbarung.</div>
           </div>
         </div>
       </div>
@@ -771,7 +583,7 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <div>© 2026 Kanzlei Daniel Schmidt · Alle Rechte vorbehalten.</div>
+      <div>&copy; 2026 ipwakaru · Alle Rechte vorbehalten.</div>
       <div class="footer-links">
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
