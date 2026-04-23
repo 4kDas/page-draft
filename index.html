@@ -349,51 +349,32 @@
     .contact {
       background: var(--navy);
       color: var(--paper);
+      text-align: center;
     }
-    .contact .section-header { text-align: center; }
-    .contact h2, .contact .section-title {
+    .contact h2 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
       color: var(--paper);
+      margin-bottom: 2rem;
     }
-    .contact .section-intro { color: rgba(255,255,255,0.75); }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      max-width: 860px;
+    .contact p {
+      color: rgba(255,255,255,0.75);
+      max-width: 560px;
       margin: 0 auto;
+      font-size: 1.1rem;
     }
-    .contact-block h3 {
-      font-size: 1.2rem;
-      color: var(--paper);
-      margin-bottom: 1.5rem;
+    .contact .section-kicker { color: var(--gold); }
+    .contact-info {
+      display: flex; justify-content: center; gap: 4rem;
+      flex-wrap: wrap; margin-top: 3rem;
     }
-    .contact-item { margin-bottom: 1.4rem; }
-    .contact-item .label {
-      font-size: 0.7rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.4rem;
+    .contact-info a {
+      font-size: 1.15rem;
       font-weight: 500;
+      color: var(--paper);
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 4px;
     }
-    .contact-item .value { font-size: 1rem; color: var(--paper); }
-    .contact-item .value a { color: var(--paper); border-bottom: 1px solid rgba(201,161,74,0.5); }
-    .contact-item .value a:hover { color: var(--gold); border-color: var(--gold); }
-    .hours-list { list-style: none; }
-    .hours-list li {
-      display: flex;
-      justify-content: space-between;
-      padding: 0.6rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      font-size: 0.95rem;
-    }
-    .hours-list li span:first-child { color: rgba(255,255,255,0.7); }
-    .eilige-hinweis {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.6);
-      margin-top: 0.6rem;
-      line-height: 1.5;
-    }
+    .contact-info a:hover { color: var(--gold); }
 
     /* ===== Footer ===== */
     footer {
@@ -418,21 +399,11 @@
       section { padding: 4.5rem 0; }
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .about-portrait { min-height: 0; aspect-ratio: 3/4; max-width: 360px; }
-      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .cred-list { grid-template-columns: 1fr; }
-      .topbar .container { font-size: 0.72rem; }
+      .contact-info { gap: 1.5rem; flex-direction: column; }
     }
   </style>
 </head>
 <body>
-
-  <!-- Top bar -->
-  <div class="topbar">
-    <div class="container">
-      <span>Kanzlei für gewerblichen Rechtsschutz Bodensee</span>
-      <span><a href="mailto:danielschmidtip@t-online.de">danielschmidtip@t-online.de</a> &nbsp;·&nbsp; +49 176 76 85 14 34</span>
-    </div>
-  </div>
 
   <!-- Header -->
   <header class="main">
@@ -454,9 +425,9 @@
   <!-- Hero -->
   <section class="hero" id="top">
     <div class="container">
-      <div class="hero-kicker">— Patentanwalt am Bodensee</div>
+      <div class="hero-kicker">Patentanwalt am Bodensee</div>
       <h1>Erfindungen <em>analysieren</em>.</h1>
-      <p>Patentanmeldungen mit naturwissenschaftlichem Tiefgang — <span style="white-space: nowrap;">persönlich, durchgängig, präzise.</span></p>
+      <p>Patentanmeldungen mit naturwissenschaftlichem Tiefgang. Persönlich. Durchgängig. Präzise.</p>
     </div>
   </section>
 
@@ -464,42 +435,16 @@
   <section class="services" id="leistungen">
     <div class="container">
       <div class="section-header">
-        <div class="section-kicker">Leistungsspektrum</div>
+        <div class="section-kicker">Leistungen</div>
         <h2 class="section-title">Gewerblicher Rechtsschutz, fokussiert.</h2>
-        <p class="section-intro">Begleitung durch den gesamten Lebenszyklus Ihres geistigen Eigentums — strategisch, präzise und mit dem Blick für das Wesentliche.</p>
       </div>
-
       <div class="service-grid">
-        <div class="service-card">
-          <div class="service-num">01</div>
-          <h3>Patente &amp; Gebrauchsmuster</h3>
-          <p>Anmeldung und Verteidigung nationaler, europäischer und internationaler Schutzrechte. Erstellung belastbarer Ansprüche, Stellungnahmen zu Prüfungsbescheiden, Einspruchs- und Nichtigkeitsverfahren.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-num">02</div>
-          <h3>Marken &amp; Designs</h3>
-          <p>Als Patentanwalt begleite ich auf Wunsch auch Marken- und Designanmeldungen bei DPMA, EUIPO und WIPO. Der Schwerpunkt meiner Tätigkeit liegt auf technischen Schutzrechten; für komplexe markenrechtliche Fragestellungen arbeite ich mit spezialisierten Kollegen zusammen.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-num">03</div>
-          <h3>Stand-der-Technik-Recherche</h3>
-          <p>Fundierte Patent- und FTO-Recherchen als Grundlage für Anmelde-, Produkt- und Investitionsentscheidungen. Neuheitsbewertung nach § 3 PatG bzw. Art. 54 EPÜ.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-num">04</div>
-          <h3>Verletzungs­verfahren</h3>
-          <p>Die gerichtliche Durchsetzung und Verteidigung von Patent- und Markenverletzungen vor den ordentlichen Gerichten obliegt dem Rechtsanwalt. Gern wirke ich in solchen Verfahren unterstützend mit — etwa bei der technischen Bewertung, der Vorbereitung von Abmahnungen oder in parallel geführten Nichtigkeits- und Löschungsverfahren — in Abstimmung mit einem spezialisierten Rechtsanwalt Ihres Vertrauens oder aus meinem Netzwerk.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-num">05</div>
-          <h3>Lizenz &amp; IP-Strategie</h3>
-          <p>Erarbeitung von Lizenz- und Technologietransfer­verträgen, Due-Diligence-Prüfungen bei M&amp;A sowie Entwicklung unternehmens­weiter Schutzrechts­strategien.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-num">06</div>
-          <h3>Technologiefelder</h3>
-          <p>Besondere Expertise in digitalen Schlüsseltechnologien, computerimplementierten Erfindungen, künstlicher Intelligenz, Software, Medizintechnik sowie mechatronischen Systemen — von der Idee bis zur Serie.</p>
-        </div>
+        <div class="service-card"><div class="service-num">01</div><h3>Patente &amp; Gebrauchsmuster</h3><p>Anmeldung und Verteidigung nationaler, europäischer und internationaler Schutzrechte.</p></div>
+        <div class="service-card"><div class="service-num">02</div><h3>Marken &amp; Designs</h3><p>Auf Wunsch Marken- und Designanmeldungen bei DPMA, EUIPO und WIPO.</p></div>
+        <div class="service-card"><div class="service-num">03</div><h3>Stand-der-Technik</h3><p>Fundierte Patent- und FTO-Recherchen als Entscheidungsgrundlage.</p></div>
+        <div class="service-card"><div class="service-num">04</div><h3>Verletzungsverfahren</h3><p>Unterstützende Mitwirkung bei technischer Bewertung und Abmahnungen.</p></div>
+        <div class="service-card"><div class="service-num">05</div><h3>Lizenz &amp; IP-Strategie</h3><p>Lizenzverträge, Due-Diligence, Schutzrechtsstrategien.</p></div>
+        <div class="service-card"><div class="service-num">06</div><h3>Technologiefelder</h3><p>Digitale Schlüsseltechnologien, KI, Software, Medizintechnik, Mechatronik.</p></div>
       </div>
     </div>
   </section>
@@ -518,21 +463,8 @@
         <div class="about-content">
           <div class="section-kicker">Die Kanzlei</div>
           <h2>Physikerdenken. Juristische Präzision.</h2>
-          <p>Als Patentanwalt mit technischer und juristischer Ausbildung verbinde ich naturwissenschaftliche Analyse mit der formalen Strenge des Patentrechts. Jedes Mandat ist für mich eine Übersetzungsaufgabe: die Erfindung verstehen, das Wesentliche identifizieren und in einem Schutzumfang abbilden, der belastbar und zugleich strategisch tragfähig ist.</p>
-          <p>Die Kanzlei arbeitet bewusst persönlich. Sie erhalten keinen anonymen Prozess, sondern einen durchgängigen Ansprechpartner — von der ersten Idee bis zur Erteilung und darüber hinaus.</p>
-
-          <div class="credentials">
-            <h4>Qualifikationen &amp; Zulassungen</h4>
-            <ul class="cred-list">
-              <li>Zugelassener Patentanwalt (DPMA)</li>
-              <li>European Patent Attorney (EPA)</li>
-              <li>Vertreter vor dem UPC</li>
-              <li>Vertreter vor dem EUIPO</li>
-              <li>Dr. rer. nat., Dipl.-Phys.</li>
-              <li>Mitglied der Patentanwalts­kammer</li>
-              <li>epi – Institute of Professional Representatives</li>
-            </ul>
-          </div>
+          <p>Als Patentanwalt mit technischer und juristischer Ausbildung verbinde ich naturwissenschaftliche Analyse mit der formalen Strenge des Patentrechts.</p>
+          <p>Die Kanzlei arbeitet bewusst persönlich — ein durchgängiger Ansprechpartner von der ersten Idee bis zur Erteilung.</p>
         </div>
       </div>
     </div>
@@ -541,41 +473,12 @@
   <!-- Kontakt -->
   <section class="contact" id="kontakt">
     <div class="container">
-      <div class="section-header">
-        <div class="section-kicker">Kontakt</div>
-        <h2 class="section-title">Sprechen wir über Ihr Schutzrecht.</h2>
-        <p class="section-intro">Ein erstes Orientierungs­gespräch ist unverbindlich. Schildern Sie uns Ihr Anliegen — wir melden uns innerhalb eines Werktags zurück.</p>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-block">
-          <h3>Kanzlei</h3>
-          <div class="contact-item">
-            <div class="label">Anschrift</div>
-            <div class="value">Hofäckerweg 2<br/>88048 Friedrichshafen</div>
-          </div>
-          <div class="contact-item">
-            <div class="label">Telefon</div>
-            <div class="value"><a href="tel:+4917676851434">+49 176 76 85 14 34</a></div>
-          </div>
-          <div class="contact-item">
-            <div class="label">E-Mail</div>
-            <div class="value"><a href="mailto:danielschmidtip@t-online.de">danielschmidtip@t-online.de</a></div>
-            <div class="eilige-hinweis">Falls Sie uns eine eilige Nachricht senden wollen oder eine Frist zu wahren ist, vergewissern Sie sich bitte, dass wir Ihre E-Mail auch wirklich erhalten haben.</div>
-          </div>
-        </div>
-        <div class="contact-block">
-          <h3>Sprechzeiten</h3>
-          <ul class="hours-list">
-            <li><span>Montag – Donnerstag</span><span>09:00 – 18:00</span></li>
-            <li><span>Freitag</span><span>09:00 – 16:00</span></li>
-            <li><span>Samstag &amp; Sonntag</span><span>nach Vereinbarung</span></li>
-          </ul>
-          <div class="contact-item" style="margin-top:1.6rem">
-            <div class="label">Termine außerhalb der Sprechzeiten</div>
-            <div class="value" style="font-size:0.9rem;">Gerne nach individueller Vereinbarung.</div>
-          </div>
-        </div>
+      <div class="section-kicker">Kontakt</div>
+      <h2>Sprechen wir.</h2>
+      <p>Ein Erstgespräch ist unverbindlich. Schildern Sie Ihr Anliegen — Antwort innerhalb eines Werktags.</p>
+      <div class="contact-info">
+        <a href="mailto:danielschmidtip@t-online.de">danielschmidtip@t-online.de</a>
+        <a href="tel:+4917676851434">+49 176 76 85 14 34</a>
       </div>
     </div>
   </section>
