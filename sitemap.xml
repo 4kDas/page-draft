@@ -7,13 +7,13 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ipwakaru.com/impressum.html</loc>
+    <loc>https://ipwakaru.com/impressum</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://ipwakaru.com/datenschutz.html</loc>
+    <loc>https://ipwakaru.com/datenschutz</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
